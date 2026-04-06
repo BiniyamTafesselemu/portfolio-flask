@@ -29,6 +29,8 @@
   h3 { font-size: 22px !important; }
   h4 { font-size: 14px !important; font-weight: 700 !important; }
   .nav > li > a { font-size: 15px !important; }
+  #main-nav .nav > li > a { font-weight: 600 !important; }
+  #main-nav .nav > li > a.active { font-weight: 700 !important; }
   .form-control { font-size: 14px !important; }
   .btn { font-size: 13px !important; font-weight: 500 !important; }
   .list-unstyled li { font-size: 14px !important; }
@@ -37,7 +39,64 @@
 
   .navbar-scrolled {
     background-color: rgba(0, 0, 0, 0.92) !important;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.2s ease;
+  }
+
+  /* Past hero: white header + bold black links (matches standalone white pages) */
+  #main-nav.main-nav-over-white {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, color 0.2s ease;
+  }
+  #main-nav.main-nav-over-white.navbar-scrolled {
+    background-color: #ffffff !important;
+  }
+  #main-nav.main-nav-over-white .navbar-nav > li > a {
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000;
+    font-weight: 700 !important;
+    text-shadow: 0.45px 0 0 #000, -0.45px 0 0 #000, 0 0.45px 0 #000, 0 -0.45px 0 #000;
+  }
+  #main-nav.main-nav-over-white .navbar-nav > li > a:hover,
+  #main-nav.main-nav-over-white .navbar-nav > li > a:focus {
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+  #main-nav.main-nav-over-white .navbar-nav > li > a.active {
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+  #main-nav.main-nav-over-white .navbar-toggle {
+    border-color: rgba(0, 0, 0, 0.35);
+    background-color: #fff;
+  }
+  #main-nav.main-nav-over-white .navbar-toggle .icon-bar {
+    background-color: #000;
+  }
+
+  /* Full-bleed hero: full viewport height, edge-to-edge + dark overlay */
+  .hero-full-bleed {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 70px 0 40px;
+    background-color: #0a0a0a;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Hero: coder at PC, same composition as original template (space.jpg) */
+    background-image: url('./static/assets/images/space.jpg');
+  }
+  .hero-full-bleed > .container {
+    width: 100%;
+  }
+  .hero-full-bleed .hero-full-wrapper {
+    width: 100%;
+  }
+  .hero-full-bleed .text-content {
+    padding-left: clamp(1.75rem, 5vw, 4.5rem);
   }
 
   /* Cards: fixed height so buttons always align, each card independent */
@@ -160,7 +219,7 @@
 
 <!-- ======================== 01 : HOME ======================== -->
 <section id="home">
-  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./static/assets/images/space.jpg')">
+  <div class="hero-full-bleed background-image-container white-text-container">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -441,15 +500,28 @@
      type();
      movingBackgroundImage();
 
-     // Navbar background on scroll
+     // Navbar: dark bar on hero; white bar + black links on white sections
      var nav = document.getElementById('main-nav');
-     window.addEventListener('scroll', function() {
-       if (window.scrollY > 100) {
-         nav.classList.add('navbar-scrolled');
-       } else {
+     var homeSection = document.getElementById('home');
+     function updateMainNavTheme() {
+       if (!nav || !homeSection) return;
+       var heroBottom = homeSection.offsetTop + homeSection.offsetHeight;
+       var pastHero = window.scrollY >= heroBottom - 40;
+       if (pastHero) {
+         nav.classList.add('main-nav-over-white');
          nav.classList.remove('navbar-scrolled');
+       } else {
+         nav.classList.remove('main-nav-over-white');
+         if (window.scrollY > 100) {
+           nav.classList.add('navbar-scrolled');
+         } else {
+           nav.classList.remove('navbar-scrolled');
+         }
        }
-     });
+     }
+     updateMainNavTheme();
+     window.addEventListener('scroll', updateMainNavTheme);
+     window.addEventListener('resize', updateMainNavTheme);
 
      // Highlight active nav link on scroll
      var sections = document.querySelectorAll('section[id]');
@@ -461,10 +533,8 @@
            var id = section.getAttribute('id');
            navLinks.forEach(function(link) {
              link.classList.remove('active');
-             link.style.fontWeight = '300';
              if (link.getAttribute('href') === '#' + id) {
                link.classList.add('active');
-               link.style.fontWeight = '700';
              }
            });
          }
