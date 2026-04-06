@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="Biniyam Tafesse - Backend & Frontend Developer" name="description">
+  <meta name="google" content="notranslate" />
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/favicon.png">
+  <link rel="icon" type="image/png" href="./static/assets/favicon.png">
+  <link href="./static/assets/favicon.ico" rel="shortcut icon">
+
+  <title>Biniyam Tafesse | Software Developer</title>  
+
+<link href="./static/main.3f6952e4.css" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+
+  /* Bigger, bolder text site-wide */
+  body, p {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+  }
+  h3 { font-size: 22px !important; }
+  h4 { font-size: 14px !important; font-weight: 700 !important; }
+  .nav > li > a { font-size: 15px !important; }
+  .form-control { font-size: 14px !important; }
+  .btn { font-size: 13px !important; font-weight: 500 !important; }
+  .list-unstyled li { font-size: 14px !important; }
+  .fa-icon { font-size: 16px !important; }
+  blockquote, blockquote p { font-size: 14px !important; }
+
+  .navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.92) !important;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Cards: fixed height so buttons always align, each card independent */
+  .card-container.card-container-lg {
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 60px;
+    position: relative;
+  }
+  .card-container.card-container-lg.card-expanded {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 60px;
+  }
+  .card-container.card-container-lg .card-desc {
+    flex: 1;
+    min-height: 0;
+  }
+  .card-container.card-container-lg .card-desc p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 13px !important;
+    line-height: 24px !important;
+    margin-bottom: 5px;
+  }
+  .card-container.card-container-lg .card-desc p.expanded {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+    display: block;
+  }
+  .card-container.card-container-lg > .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 5rem;
+  }
+
+  .show-more-btn {
+    color: #5bc0de;
+    cursor: pointer;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .show-more-btn:hover {
+    color: #31b0d5;
+    text-decoration: underline;
+  }
+
+  /* Contact form */
+  .contact-form .form-group label {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    margin-bottom: 6px;
+  }
+  .contact-form .form-group label .required {
+    color: #d9534f;
+    margin-left: 2px;
+  }
+  .contact-form .form-group {
+    margin-bottom: 20px;
+  }
+  .contact-info-side {
+    padding-top: 10px;
+  }
+  .contact-info-side ul li {
+    margin-bottom: 15px;
+  }
+  .contact-info-side h3 {
+    margin-top: 25px;
+  }
+
+  .section-container + .section-container {
+    border-top: 1px solid #eee;
+  }
+
+  @media (max-width: 767px) {
+    .card-container.card-container-lg {
+      height: auto;
+    }
+  }
+</style>
+</head>
+
+<body class="minimal">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar navbar-fixed-top navbar-inverse" id="main-nav">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#home">01 : Home</a></li>
+          <li><a href="#about">02 : About me</a></li>
+          <li><a href="#works">03 : Works</a></li>
+          <li><a href="#contact">04 : Contact</a></li>
+        </ul>
+      </div> 
+    </div>
+  </nav>
+</header>
+
+<!-- ======================== 01 : HOME ======================== -->
+<section id="home">
+  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./static/assets/images/space.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="hero-full-wrapper">
+            <div class="text-content">
+              <h1>Hello,<br>
+                <span id="typed-strings">
+                  <span>I'm Biniyam Tafesse</span>
+                  <span>Fullstack Developer</span>
+                  <span>React | Node.js | Express</span>
+                  <span>Building Scalable Web Apps</span>
+                </span>
+                <span id="typed"></span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 02 : ABOUT ======================== -->
+<section id="about">
+  <div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">02 : About me</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <h3>Who I Am</h3>
+                  <p>I'm a Backend & Frontend Developer with a passion for building scalable, high-performance applications. With expertise spanning both frontend and backend technologies, I create full-stack solutions that bridge design and functionality.</p>
+                  <p>My approach combines clean code practices, user-centric design thinking, and a deep understanding of system architecture to deliver products that are not just functional, but delightful to use.</p>
+                  
+                  <h3>Skills & Technologies</h3>
+                  <p><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS, Flutter</p>
+                  <p><strong>Backend:</strong> Node.js, Express, REST APIs, GraphQL</p>
+                  <p><strong>Database:</strong> PostgreSQL, MongoDB, MySQL</p>
+                  <p><strong>Tools & Platforms:</strong> Git, Docker, Vercel, Azure, CI/CD, AWS</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <h3>Experience</h3>
+
+                  <h4>Fullstack Developer — ASTU</h4>
+                  <p><em>Jun 2025 - Sep 2025</em></p>
+                  <p>Built a teacher management system with React, Express.js, and PostgreSQL featuring four portals. Developed RESTful APIs, deployed on cPanel and Azure, and enhanced security through input sanitization.</p>
+                  
+                  <h4>Backend & Frontend Developer — Softnet Solutions</h4>
+                  <p><em>Jun 2024 - Sep 2024</em></p>
+                  <p>Built a school timetable generator using React, Express, and MySQL that intelligently considers teacher availability, class availability, and student capacity.</p>
+
+                  <h4>Flutter Developer — Serdo Travel</h4>
+                  <p><em>Jun 2023 - Sep 2023</em></p>
+                  <p>Built intuitive Flutter UIs for travel applications, integrated APIs, and optimized performance.</p>
+
+                  <h3 style="margin-top: 25px;">Coding Profiles</h3>
+                  <p><a href="https://leetcode.com/u/Biniyamtaf/" target="_blank">LeetCode</a> | <a href="https://codeforces.com/submissions/Biniyam_Tafesse" target="_blank">Codeforces</a> | <a href="https://www.frontendmentor.io/profile/BiniyamTafesselemu/solutions" target="_blank">Frontend Mentor</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 03 : WORKS ======================== -->
+<section id="works">
+  <div class="section-container">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-sm-8 col-sm-offset-2 section-container-spacer">
+          <div class="text-center">
+            <h1 class="h2">03 : Works</h1>
+            <p>A selection of projects I've built — from full-stack web apps to mobile applications and algorithmic solutions.</p>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+       
+        <div id="myCarousel" class="carousel slide projects-carousel">
+          <div class="carousel-inner">
+              <div class="item active">
+                  <div class="row flex-row">
+                      <div class="col-sm-4">
+                        <a href="https://github.com/Biruk-ak/teachtrack" target="_blank" title="teach-track" class="black-image-project-hover">
+                          <img src="./static/assets/images/work01-hover.jpg" alt="teach-track" class="img-responsive">
+                        </a>
+                        <div class="card-container card-container-lg">
+                          <h4>001/005</h4>
+                          <h3>teach-track</h3>
+                          <div class="card-desc">
+                            <p>Teacher management system with four portals (education bureau, teachers, schools, public) built using React, Express.js, and PostgreSQL. Controls recruitment, circulation, and retirement processes according to Addis Ababa regulations.</p>
+                            <span class="show-more-btn" onclick="toggleDesc(this)">show more</span>
+                          </div>
+                          <a href="https://github.com/Biruk-ak/teachtrack" target="_blank" class="btn btn-default">View Source</a>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <a href="https://github.com/BiniyamTafesselemu/E-Commerce" target="_blank" title="e-commerce" class="black-image-project-hover">
+                          <img src="./static/assets/images/work02-hover.jpg" alt="e-commerce" class="img-responsive">
+                        </a>
+                        <div class="card-container card-container-lg">
+                          <h4>002/005</h4>
+                          <h3>E-Commerce Platform</h3>
+                          <div class="card-desc">
+                            <p>Full-stack e-commerce app built with React, Express.js, and MongoDB. Features user/customer and admin portals. Admins post products; integrated with Chapa payment method for seamless transactions.</p>
+                            <span class="show-more-btn" onclick="toggleDesc(this)">show more</span>
+                          </div>
+                          <a href="https://github.com/BiniyamTafesselemu/E-Commerce" target="_blank" class="btn btn-default">View Source</a>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <a href="https://github.com/BiniyamTafesselemu/pi_schooltimetable_generator" target="_blank" title="timetable generator" class="black-image-project-hover">
+                          <img src="./static/assets/images/work03-hover.jpg" alt="timetable generator" class="img-responsive">
+                        </a>
+                        <div class="card-container card-container-lg">
+                          <h4>003/005</h4>
+                          <h3>Timetable Generator</h3>
+                          <div class="card-desc">
+                            <p>Built using React, Express, and MySQL. Generates timetable schedules for KG-Preparatory schools considering teacher availability, class availability, sections, and student counts per class.</p>
+                            <span class="show-more-btn" onclick="toggleDesc(this)">show more</span>
+                          </div>
+                          <a href="https://github.com/BiniyamTafesselemu/pi_schooltimetable_generator" target="_blank" class="btn btn-default">View Source</a>
+                        </div>
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="row flex-row">
+                    <div class="col-sm-4">
+                      <a href="https://github.com/BiniyamTafesse/flutter_bus_ticket_booking-_app" target="_blank" class="black-image-project-hover">
+                        <img src="./static/assets/images/work01-hover.jpg" alt="Serdo Travel" class="img-responsive">
+                      </a>
+                      <div class="card-container card-container-lg">
+                        <h4>004/005</h4>
+                        <h3>Serdo Travel — Flutter</h3>
+                        <div class="card-desc">
+                          <p>Travel booking app built with Flutter and raw PHP. Users select starting point and destination; displays available seat numbers for booking confirmation.</p>
+                          <span class="show-more-btn" onclick="toggleDesc(this)">show more</span>
+                        </div>
+                        <a href="https://github.com/BiniyamTafesse/flutter_bus_ticket_booking-_app" target="_blank" class="btn btn-default">View Source</a>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <a href="https://www.frontendmentor.io/profile/BiniyamTafesselemu/solutions" target="_blank" class="black-image-project-hover">
+                        <img src="./static/assets/images/work02-hover.jpg" alt="Frontend Mentor" class="img-responsive">
+                      </a>
+                      <div class="card-container card-container-lg">
+                        <h4>005/005</h4>
+                        <h3>Frontend Mentor</h3>
+                        <div class="card-desc">
+                          <p>Completed various front-end challenges to polish responsive design, TypeScript and accessibility; delivered production-ready UI implementations following best practices.</p>
+                          <span class="show-more-btn" onclick="toggleDesc(this)">show more</span>
+                        </div>
+                        <a href="https://www.frontendmentor.io/profile/BiniyamTafesselemu/solutions" target="_blank" class="btn btn-default">View Solutions</a>
+                      </div>
+                    </div>
+                      
+                  </div>
+              </div>
+          </div>
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">&#8249;</a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">&#8250;</a>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== 04 : CONTACT ======================== -->
+<section id="contact">
+  <div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">04 : Get In Touch</h1>
+            <p>Have a project in mind? Let's collaborate and create something amazing together.</p>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+               <form action="submit_form" method="post" class="reveal-content contact-form">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input name="email" type="email" class="form-control" id="email" placeholder="your@email.com" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="telegram">Telegram Username</label>
+                        <input name="telegram" type="text" class="form-control" id="telegram" placeholder="@username">
+                      </div>
+                      <div class="form-group">
+                        <label for="phone">Phone (Optional)</label>
+                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="+251 ...">
+                      </div>
+                      <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea name="message" class="form-control" id="message" rows="5" placeholder="Tell me about your project or idea..." required></textarea>
+                      </div>
+                      <button type="submit" class="btn btn-default btn-lg">Send Message</button>
+                    </div>
+                    <div class="col-md-5 contact-info-side address-container">
+                      <ul class="list-unstyled">
+                        <li>
+                          <span class="fa-icon">
+                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                          </span>
+                          <a href="https://t.me/BiniyamTafesse" target="_blank" style="text-decoration: none; color: inherit;">Telegram: @BiniyamTafesse</a>
+                        </li>
+                        <li>
+                          <span class="fa-icon">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                          </span>
+                          Addis Ababa, Ethiopia
+                        </li>
+                        <li>
+                          <span class="fa-icon">
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                          </span>
+                          <a href="https://github.com/BiniyamTafesselemu" target="_blank" style="text-decoration: none; color: inherit;">github.com/BiniyamTafesselemu</a>
+                        </li>
+                      </ul>
+                      <h3>Connect with me</h3>
+                      <a href="https://t.me/BiniyamTafesse" target="_blank" title="Telegram" class="fa-icon">
+                        <i class="fa fa-paper-plane"></i>
+                      </a>
+                      <a href="https://github.com/BiniyamTafesselemu" target="_blank" title="GitHub" class="fa-icon">
+                        <i class="fa fa-github"></i>
+                      </a>
+                      <a href="https://www.linkedin.com/in/biniyam-tafesse" target="_blank" title="LinkedIn" class="fa-icon">
+                        <i class="fa fa-linkedin"></i>
+                      </a>
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+         
+       </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>&copy; Biniyam Tafesse | Fullstack Developer</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     type();
+     movingBackgroundImage();
+
+     // Navbar background on scroll
+     var nav = document.getElementById('main-nav');
+     window.addEventListener('scroll', function() {
+       if (window.scrollY > 100) {
+         nav.classList.add('navbar-scrolled');
+       } else {
+         nav.classList.remove('navbar-scrolled');
+       }
+     });
+
+     // Highlight active nav link on scroll
+     var sections = document.querySelectorAll('section[id]');
+     var navLinks = document.querySelectorAll('#navbar-collapse .nav a');
+     window.addEventListener('scroll', function() {
+       var scrollPos = window.scrollY + 80;
+       sections.forEach(function(section) {
+         if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+           var id = section.getAttribute('id');
+           navLinks.forEach(function(link) {
+             link.classList.remove('active');
+             link.style.fontWeight = '300';
+             if (link.getAttribute('href') === '#' + id) {
+               link.classList.add('active');
+               link.style.fontWeight = '700';
+             }
+           });
+         }
+       });
+     });
+
+     // Show more button visibility
+     document.querySelectorAll('.card-desc').forEach(function(card) {
+       var p = card.querySelector('p');
+       var btn = card.querySelector('.show-more-btn');
+       if (p && btn && p.scrollHeight <= p.offsetHeight) {
+         btn.style.display = 'none';
+       }
+     });
+  });
+
+  function toggleDesc(btn) {
+    var p = btn.previousElementSibling;
+    var card = btn.closest('.card-container-lg');
+    if (p.classList.contains('expanded')) {
+      p.classList.remove('expanded');
+      btn.textContent = 'show more';
+      if (card) card.classList.remove('card-expanded');
+    } else {
+      p.classList.add('expanded');
+      btn.textContent = 'show less';
+      if (card) card.classList.add('card-expanded');
+    }
+  }
+</script>
+
+<script type="text/javascript" src="./static/main.70a66962.js"></script></body>
+
+</html>
